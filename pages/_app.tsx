@@ -1,11 +1,15 @@
 import '../styles/globals.css'
-import { AppPropsWithLayout } from "../types/types"
+import { AppLayoutProps } from "../types/types"
 
-function LoanTracker({ Component, pageProps }: AppPropsWithLayout) {
+function LoanTracker({ Component, pageProps }: AppLayoutProps) {
 	
-	const getLayout = Component.getLayout ?? ((page) => page)
+	const Layout = Component.layout || ((children) => <>{children}</>)
 
-	return getLayout(<Component {...pageProps} />)
+		return (
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
+		)
 }
 
 export default LoanTracker

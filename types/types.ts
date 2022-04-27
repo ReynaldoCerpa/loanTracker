@@ -1,12 +1,21 @@
-import type { AppProps } from 'next/app'
 import { NextPage } from 'next'
-import { ReactElement, ReactNode } from 'react'
+import LandingLayout from '../components/Layouts/LandingLayout'
 
 // Layout types
-export type PageWithLayout = NextPage & {
-	getLayout?: (page: ReactElement) => ReactNode
+
+type LandingLayoutType = NextPage & { layout: typeof LandingLayout }
+
+export type PageWithLayoutType  = LandingLayoutType
+
+export type AppLayoutProps = {
+	Component: PageWithLayoutType
+	pageProps: any
 }
 
-export type AppPropsWithLayout = AppProps & {
-	Component: PageWithLayout
+
+// Drawer types
+
+export type DrawerProps = {
+	opened: boolean
+	setOpened: React.Dispatch<React.SetStateAction<boolean>>
 }
