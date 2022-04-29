@@ -9,7 +9,11 @@ module.exports = {
       "source":["Source+sans+Pro", "sans serif"],
       "montserrat":["Montserrat","sans serif"],
     },
-    extend: {},
+		extend: {
+			colors: {
+				primary: "#1C54A8" 
+			}
+		},
   },
   plugins: [],
 }

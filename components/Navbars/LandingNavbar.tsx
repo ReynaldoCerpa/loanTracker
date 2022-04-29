@@ -1,14 +1,14 @@
 import { Burger } from '@mantine/core'
 import { useState } from 'react'
-import Logo from './Logo'
-import Drawer from './Drawer/Drawer'
+import Logo from '../Logo'
+import Drawer from '../Drawer/Drawer'
 
 const LandingNavbar = () =>{
 
 	const [opened, setOpened] = useState(false)
 
 	return (
-			<div className="flex justify-between w-full h-16 p-2 items-center bg-[#1C54A8]">
+			<div className="flex justify-between w-full p-6 items-center bg-primary h-[5rem]">
 				<Burger
 					color="white"
 					opened={false}

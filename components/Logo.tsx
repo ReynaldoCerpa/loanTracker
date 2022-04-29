@@ -1,14 +1,19 @@
 import Image from "next/image"
 
-const Logo = () => {
+const Logo = ({width, height}: LogoProps) => {
 
 	return (
 				<Image
 					src="/logo.png"
-					width={50}
-					height={50}
+					width={width}
+					height={height}
 				/>
 	)
+}
+
+Logo.defaultProps = {
+	width: 50,
+	height: 50
 }
 
 export default Logo

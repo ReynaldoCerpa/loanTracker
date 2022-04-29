@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
-import LandingNavbar from "../LandingNavbar";
+import LandingNavbar from "../Navbars/LandingNavbar";
 
 function LandingLayout({ children }: {children: ReactElement}) {
 	return (
-				<div>
+				<>
 					<LandingNavbar/>
-					<main>{children}</main>
-				</div>
+					{children}
+				</>
 	)
 }
 
