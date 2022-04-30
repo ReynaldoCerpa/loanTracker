@@ -5,17 +5,18 @@ import DrawerButton from './DrawerButton'
 //import { FiUserPlus, FiUser } from "react-icons/fi";
 
 const Drawer = ({opened, setOpened, options}: DrawerProps) => {
-
+	let i = 0
 	return (
 		<MantineDrawer
+			position="right"
 			opened={opened}
 			onClose={() => setOpened(false)}
-			padding="lg"
+			padding="sm"
 			size="sm"
 		>
 		{
 			options.map((x)=>{
-				return <DrawerButton title={x.title} />
+				return <DrawerButton key={i++} title={x.title} />
 			})
 		}
 		</MantineDrawer>

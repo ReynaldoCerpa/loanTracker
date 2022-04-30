@@ -6,8 +6,9 @@ const Landing: FC = () => {
 
   return (
     <div className="h-screen w-full flex justify-center bg-primary">
-			<h1 className="text-white font-raleway mt-[20vh] mx-5 text-[5rem] leading-none">
-				Dont mess up your ticket sales anymore.
+			<h1 className="text-white font-raleway  mx-5 text-[5rem] leading-none
+										mt-10 sm:mt-15 md:mt-[5rem]">
+										Vende tus boletos de manera <u>efectiva.</u>
 			</h1>
     </div>
   )

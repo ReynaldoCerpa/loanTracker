@@ -1,5 +1,5 @@
 
-	// Logo types
-	type LogoProps = {
-		size: string
-	}
+// Logo types
+export type LogoProps = {
+	size: string
+}
