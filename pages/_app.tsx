@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import { AppLayoutProps } from "../types/layout"
 
 function LoanTracker({ Component, pageProps }: AppLayoutProps) {
 	

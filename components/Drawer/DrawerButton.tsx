@@ -1,13 +1,14 @@
 import { Group, UnstyledButton } from "@mantine/core"
-import { FiUserPlus, FiUser } from "react-icons/fi";
+import { DrawerButtonProps } from "../../types/drawer";
 
-const DrawerButton = ({Icon, title}) => {
-
+const DrawerButton = ({Icon, title}: DrawerButtonProps) => {
+	// Custon icon prop currently in development
 	return (
 		<div>
 			<UnstyledButton>
-				<Group>
-					<Icon/>
+				<Group
+					color="red"
+				>
 					<p>{title}</p>
 				</Group>
 			</UnstyledButton>

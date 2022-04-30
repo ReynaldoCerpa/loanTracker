@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import LandingLayout from '../components/Layouts/LandingLayout'
+import { PageWithLayoutType } from '../types/layout';
 
 const Landing: FC = () => {
 

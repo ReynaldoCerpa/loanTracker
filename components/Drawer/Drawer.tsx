@@ -1,6 +1,10 @@
 import {  Drawer as MantineDrawer} from '@mantine/core'
+import { DrawerProps } from '../../types/drawer'
+import DrawerButton from './DrawerButton'
 
-const Drawer = ({opened, setOpened}: DrawerProps) => {
+//import { FiUserPlus, FiUser } from "react-icons/fi";
+
+const Drawer = ({opened, setOpened, options}: DrawerProps) => {
 
 	return (
 		<MantineDrawer
@@ -9,10 +13,20 @@ const Drawer = ({opened, setOpened}: DrawerProps) => {
 			padding="lg"
 			size="sm"
 		>
-			<h2>Login</h2>
-			<h2>Register</h2>
+		{
+			options.map((x)=>{
+				return <DrawerButton title={x.title} />
+			})
+		}
 		</MantineDrawer>
 	)
+}
+
+Drawer.defaultProps = {
+	opened: false,
+	options:[{
+		title: "No hay botones"
+	}]
 }
 
 export default Drawer
