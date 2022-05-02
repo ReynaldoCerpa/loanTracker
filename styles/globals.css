@@ -6,6 +6,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.base-button {
+		@apply font-raleway py-2 px-3 rounded-md;
+	}
+}
+
+@layer utilities {
+	.screen-height {
+		height: calc(100vh - 5rem)
+	}
+}
+
 html,
 body {
   padding: 0;

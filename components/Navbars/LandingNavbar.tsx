@@ -3,11 +3,11 @@ import { useState } from 'react'
 import Logo from '../Logo'
 import Drawer from '../Drawer/Drawer'
 import Button from '../Button'
-import Link from 'next/link'
 
 const LandingNavbar = () =>{
 
 	const [opened, setOpened] = useState(false)
+	const [page, setPage] = useState("home")
 	const options = [
 		{title:"Iniciar sesión"},
 		{title: "Registrarse"}
@@ -15,7 +15,11 @@ const LandingNavbar = () =>{
 
 	return (
 			<div className="flex justify-between w-full p-6 items-center bg-primary h-[5rem]">
-					<Logo/>
+				<Logo
+					onClick={()=>{
+						setPage("home")		
+					}}
+				/>
 				<div className="sm:hidden">
 					<Burger
 						color="white"
@@ -29,11 +33,27 @@ const LandingNavbar = () =>{
 					/>
 				</div>
 				<div className="hidden sm:block">
-					<Button
-						href="/login"
-						className="bg-white font-raleway p-2 rounded-md ml-2"
-						title="Registrarse"
-					/>
+				{ page === "home" ?
+					<>
+						<Button
+							href="/login"
+							className="base-button bg-white"
+							title="Iniciar sesión"
+							onClick={()=>{
+								setPage("login")
+							}}
+						/>
+						<Button
+							href="/register"
+							className="base-button bg-white ml-2"
+							title="Registrarse"
+							onClick={()=>{
+								setPage("register")
+							}}
+						/>
+					</>
+					: null
+				}
 				</div>
 			</div>
 			)

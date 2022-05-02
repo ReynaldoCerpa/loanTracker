@@ -1,5 +1,6 @@
 
 // Logo types
 export type LogoProps = {
-	size: string
+	size: string,
+	onClick: React.MouseEventHandler<HTMLElement>
 }
