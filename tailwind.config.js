@@ -12,8 +12,11 @@ module.exports = {
 		extend: {
 			colors: {
 				primary: "#1C54A8" 
+			},
+			screens: {
+				"sm": "430px",
 			}
-		},
+		}
   },
   plugins: [],
 }

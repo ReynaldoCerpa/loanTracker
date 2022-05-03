@@ -1,16 +1,13 @@
 import { ReactElement } from "react";
-import Head from "next/head";
 import LandingNavbar from "../Navbars/LandingNavbar";
+import Head from "./Head";
 
-function LandingLayout({ children }: {children: ReactElement}) {
+function LandingLayout({children}:{children: ReactElement}) {
 	return (
-				<>
-					<Head>
-						<link rel="icon" href="/logo.png"	/>
-					</Head>
-					<LandingNavbar/>
-					{children}
-				</>
+		<Head>
+			<LandingNavbar/>
+			<main>{children}</main>
+		</Head>
 	)
 }
 

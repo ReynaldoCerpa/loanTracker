@@ -4,12 +4,18 @@ import LandingLayout from '../components/Layouts/LandingLayout'
 
 
 // Layout types
-type LandingLayoutType = NextPage & { layout: typeof LandingLayout }
+type LayoutType = NextPage & { layout: typeof LandingLayout}
 
-export type PageWithLayoutType  = LandingLayoutType
+export type PageWithLayoutType  = LayoutType
 
 export interface AppLayoutProps {
 	Component: PageWithLayoutType
 	pageProps: any
 }
 
+
+// Base types
+
+export interface HeadProps {
+	children: ReactElement,
+}

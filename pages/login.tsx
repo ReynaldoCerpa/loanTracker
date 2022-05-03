@@ -2,13 +2,17 @@ import { Input } from '@mantine/core';
 import Link from 'next/link';
 import { FC } from 'react';
 import Button from '../components/Button';
-import LandingLayout from '../components/Layouts/LandingLayout'
+import NoLayout from '../components/Layouts/NoLayout';
+import Logo from '../components/Logo';
 import { PageWithLayoutType } from '../types/layout';
 
 const Login : FC = () => {
 	return (
-		<div className="bg-primary w-full screen-height flex items-center justify-center">
-			<div className="bg-white w-[40vh] rounded-2xl drop-shadow-xl p-6 
+		<div className="bg-primary w-full h-screen flex flex-col items-center justify-center">
+			<Logo
+				className="mb-5"
+			/>
+			<div className="bg-white max-w-[50vh] w-full rounded-2xl drop-shadow-xl p-10 
 											flex flex-col ">
 				<h1 className="text-[1.5rem] font-source mx-auto mb-4">Inicie Sesión</h1>
 				<Input
@@ -20,10 +24,10 @@ const Login : FC = () => {
 					placeholder="Contraseña"
 					type={'password'}
 				/>
-				<div className="flex mb-16">
+				<div className="flex flex-col sm:flex-row mb-16 ">
 					<p>No tiene cuenta?</p>
 					<Link href="/register"> 
-						<p className="text-primary cursor-pointer ml-1">Regístrese</p>
+						<p className="text-primary cursor-pointer sm:ml-1">Regístrese</p>
 					</Link>
 				</div>
 				
@@ -40,5 +44,6 @@ const Login : FC = () => {
 	)
 }
 
-;(Login as PageWithLayoutType).layout = LandingLayout
+;(Login as PageWithLayoutType).layout = NoLayout
+
 export default Login
