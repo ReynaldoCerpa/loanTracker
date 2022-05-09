@@ -1,15 +1,15 @@
-import Head from "next/head";
+import NextHead from "next/head";
 import { HeadProps } from "../../types/layout";
 
-function BaseLayout({ children }: HeadProps) {
+const Head = ({ children }: HeadProps) => {
 	return (
 				<>
-					<Head>
+					<NextHead >
 						<link rel="icon" href="/logo.png"	/>
-					</Head>
+					</NextHead >
 					{children}
 				</>
 	)
 }
 
-export default BaseLayout
+export default Head

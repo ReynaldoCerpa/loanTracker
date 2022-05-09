@@ -8,12 +8,14 @@ const Logo = ({size, onClick, className}: LogoProps) => {
 				<div className={`${className}`}>
 						<div className="flex items-center cursor-pointer">
 							<Link href="/" >
-								<Image
-									src="/logo.png"
-									width={size}
-									height={size}
-									onClick={onClick}
-								/>
+								<a>
+									<Image
+										src="/logo.png"
+										width={size}
+										height={size}
+										onClick={onClick}
+									/>
+								</a>
 							</Link>
 							<Link href="/" >
 								<h1 className="hidden md:block ml-5 text-white font-raleway text-4xl">LoanTracker</h1>

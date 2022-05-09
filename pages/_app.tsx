@@ -1,14 +1,13 @@
 import '../styles/globals.css'
-import { AppLayoutProps } from "../types/layout"
+import Head from '../components/Layouts/Head'
+import { AppProps } from 'next/app'
 
-function LoanTracker({ Component, pageProps }: AppLayoutProps) {
+const LoanTracker = ({ Component, pageProps }: AppProps) => {
 	
-	const Layout = Component.layout || ((children) => <>{children}</>)
-
 		return (
-			<Layout>
+			<Head>
 				<Component {...pageProps} />
-			</Layout>
+			</Head>
 		)
 }
 

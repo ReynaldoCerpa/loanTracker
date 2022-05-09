@@ -10,11 +10,32 @@
 	.base-button {
 		@apply font-raleway py-2 px-3 rounded-md;
 	}
+
+	/* Used for login and register page form cards */
+	.form-card {
+		@apply bg-white max-w-[50vh] w-full rounded-2xl drop-shadow-xl flex flex-col
+	}
+
+	/* Styles for the register and login page main containers */
+	.reg-log-cont {
+		@apply bg-primary w-full h-screen flex flex-col items-center
+	}
+
 }
+
+							/* mq stands for media queries */
 
 @layer utilities {
 	.screen-height {
 		height: calc(100vh - 5rem)
+	}
+
+	.form-card-mq {
+		@apply p-8 sm:p-12
+	}
+
+	.reg-log-cont {
+		@apply pt-16 px-5
 	}
 }
 

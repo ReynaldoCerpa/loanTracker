@@ -9,8 +9,14 @@ const LandingNavbar = () =>{
 	const [opened, setOpened] = useState(false)
 	const [page, setPage] = useState("home")
 	const options = [
-		{title:"Iniciar sesión"},
-		{title: "Registrarse"}
+		{
+			title:"Iniciar sesión",
+			href: "/login"
+		},
+		{
+			title: "Registrarse",
+			href: "/register"
+		}
 	]
 
 	return (

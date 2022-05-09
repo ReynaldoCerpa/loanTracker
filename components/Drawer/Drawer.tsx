@@ -16,7 +16,7 @@ const Drawer = ({opened, setOpened, options}: DrawerProps) => {
 		>
 		{
 			options.map((x)=>{
-				return <DrawerButton key={i++} title={x.title} />
+				return <DrawerButton key={i++} href={x.href} title={x.title} />
 			})
 		}
 		</MantineDrawer>

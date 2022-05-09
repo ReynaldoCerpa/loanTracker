@@ -17,7 +17,8 @@ const Button = ({title, className, href, onClick}: ButtonProps) => {
 
 Button.defaultProps = {
 	title: "",
-	className: ""
+	className: "",
+	href: "/"
 }
 
 export default Button
