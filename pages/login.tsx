@@ -1,8 +1,8 @@
-import { Input, InputWrapper } from '@mantine/core';
 import Link from 'next/link';
 import { FC, useState } from 'react';
-import { validateLoginInputs } from '../utils/validteInputs';
+import { validateLoginInputs } from '../utils/validateInputs';
 import Button from '../components/Button';
+import Input from "../components/Input"
 import Logo from '../components/Logo';
 
 const Login : FC = () => {
@@ -21,27 +21,21 @@ const Login : FC = () => {
 			/>
 			<div className="form-card form-card-mq">
 				<h1 className="text-[1.5rem] font-source mx-auto mb-4">Inicie Sesión</h1>
-				<InputWrapper
-					error={usernameMessage}
-					className="mb-5"
-				>
 					<Input
+						errorMessage={usernameMessage}
+						className="mb-5"
 						value={username}
-						onInput={(e:any)=>setUsername(e.target.value)}
+						setValue={(e:any)=>setUsername(e.target.value)}
 						placeholder="Nombre de usuario"
 					/>
-				</InputWrapper>
-				<InputWrapper
-					error={passwordMessage}
-					className="mb-2"
-				>
 					<Input
+						errorMessage={passwordMessage}
+						className="mb-2s"
 						value={password}
-						onInput={(e:any)=>setPassword(e.target.value)}
+						setValue={(e:any)=>setPassword(e.target.value)}
 						placeholder="Contraseña"
-						type={'password'}
+						type="password"
 					/>
-				</InputWrapper>
 				<div className="flex flex-col sm:flex-row mb-16 ">
 					<p>No tiene cuenta?</p>
 					<Link href="/register"> 
@@ -55,8 +49,11 @@ const Login : FC = () => {
 					className="base-button bg-primary text-white w-full"
 					onClick={() => {
 						setLoading(true)
-						const valid = validateLoginInputs({username, password, setUsernameMessage, setPasswordMessage})
-						if (valid) setLoading(false)
+						setTimeout(()=>{
+							const valid = validateLoginInputs({username, password, setUsernameMessage, setPasswordMessage})
+							setLoading(false)
+							if (valid) console.log("Sesion iniciada") ; else console.log("Fail")
+						}, 2000)
 					}}
 				/>
 			</div>
