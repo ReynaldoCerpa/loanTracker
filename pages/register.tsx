@@ -14,21 +14,21 @@ const Register : FC = () => {
 				<h1 className="text-[1.5rem] font-source mx-auto mb-4">Regístrese</h1>
 				<form>
 					<Input
-						className="mb-3"
+						className="mb-5"
 						placeholder="Nombre de usuario"
 					/>
 					<Input
-						className="mb-3"
+						className="mb-5"
 						placeholder="Correo electrónico"
 						type={'password'}
 					/>
 						<Input
-							className="mb-3"
+							className="mb-5"
 							placeholder="Contraseña"
 							type={'password'}
 						/>
 						<Input
-							className="mb-1"
+							className="mb-2"
 							placeholder="Confirmar contraseña"
 							type={'password'}
 						/>
