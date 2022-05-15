@@ -4,6 +4,7 @@ import { validateRegisterInputs } from '../utils/validateInputs';
 import Link from 'next/link';
 import Button from '../components/Button';
 import Logo from '../components/Logo';
+import { PasswordInput } from '@mantine/core';
 
 const Register : FC = () => {
 
@@ -40,21 +41,17 @@ const Register : FC = () => {
 						placeholder="Correo electrónico"
 						type="email"
 					/>
-					<Input
-						errorMessage={passwordMessage}
+					<PasswordInput
+						className="mb-2"
 						value={password}
-						setValue={setPassword}
-						className="mb-3"
+						onChange={(e:any)=>{setPassword(e.target.value)}}
 						placeholder="Contraseña"
-						type={'password'}
 					/>
-					<Input
-						errorMessage={confirmPasswordMessage}
+					<PasswordInput
+						className="mb-2"
 						value={confirmPassword}
-						setValue={setConfirmPassword}
-						className="mb-1"
+						onChange={(e:any)=>{setConfirmPassword(e.target.value)}}
 						placeholder="Confirmar contraseña"
-						type={'password'}
 					/>
 					<div className="flex flex-col  mb-16
 													sm:flex-row">

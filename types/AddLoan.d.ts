@@ -4,6 +4,5 @@ export interface AddLoanButtonProps {
 
 export interface AddLoanModalProps {
 	opened: boolean,
-	setOpened: React.Dispatch<React.SetStateAction<boolean>>,
 	onClickCancelButton : React.MouseEventHandler<HTMLElement>
 }

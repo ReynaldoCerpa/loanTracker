@@ -2,7 +2,7 @@ import { Modal } from "@mantine/core"
 import { AddLoanModalProps } from "../../types/AddLoan"
 import Button from "../Button"
 
-export const AddLoanModal = ({opened, setOpened, onClickCancelButton} : AddLoanModalProps) => {
+export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) => {
 
 	
 	return (
@@ -10,7 +10,7 @@ export const AddLoanModal = ({opened, setOpened, onClickCancelButton} : AddLoanM
 			transition="slide-up"
 			transitionDuration={300}
 			opened={opened}
-			onClose={()=>setOpened(false)}
+			onClose={()=>{}}
 			withCloseButton={false}
 			closeOnEscape={false}
 			closeOnClickOutside={false}

@@ -10,7 +10,7 @@ const Input = ({className, placeholder, type, errorMessage, value, setValue}: In
 			>
 				<MantineInput
 					value={value}
-					onInput={(e:any)=>setValue(e.target.value)}
+					onChange={(e:any)=>setValue(e.target.value)}
 					placeholder={placeholder}
 					type={type}
 				/>

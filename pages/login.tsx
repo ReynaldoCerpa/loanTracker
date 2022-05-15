@@ -4,6 +4,7 @@ import { validateLoginInputs } from '../utils/validateInputs';
 import Button from '../components/Button';
 import Input from "../components/Input"
 import Logo from '../components/Logo';
+import { PasswordInput } from '@mantine/core';
 
 const Login : FC = () => {
 
@@ -28,13 +29,11 @@ const Login : FC = () => {
 						setValue={(e:any)=>setUsername(e.target.value)}
 						placeholder="Nombre de usuario"
 					/>
-					<Input
-						errorMessage={passwordMessage}
+					<PasswordInput
 						className="mb-2s"
 						value={password}
-						setValue={(e:any)=>setPassword(e.target.value)}
+						onChange={(e:any)=>{setPassword(e.target.value)}}
 						placeholder="Contraseña"
-						type="password"
 					/>
 				<div className="flex flex-col sm:flex-row mb-16 ">
 					<p>No tiene cuenta?</p>
