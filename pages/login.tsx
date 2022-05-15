@@ -44,6 +44,7 @@ const Login : FC = () => {
 				</div>
 				
 				<Button
+					href="/home"
 					loading={loading}
 					title="Iniciar sesión"
 					className="base-button bg-primary text-white w-full"

@@ -24,8 +24,6 @@ const Button = ({title, className, href, onClick, loading}: ButtonProps) => {
 }
 
 Button.defaultProps = {
-	title: "",
-	className: "",
 	href: "",
 	loading: false
 }

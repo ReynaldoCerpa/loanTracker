@@ -29,14 +29,14 @@ const Register : FC = () => {
 						errorMessage={usernameMessage}
 						value={username}
 						setValue={setUsername}
-						className="mb-5"
+						className="mb-3"
 						placeholder="Nombre de usuario"
 					/>
 					<Input
 						errorMessage={emailMessage}
 						value={email}
 						setValue={setEmail}
-						className="mb-5"
+						className="mb-3"
 						placeholder="Correo electrónico"
 						type="email"
 					/>
@@ -44,7 +44,7 @@ const Register : FC = () => {
 						errorMessage={passwordMessage}
 						value={password}
 						setValue={setPassword}
-						className="mb-5"
+						className="mb-3"
 						placeholder="Contraseña"
 						type={'password'}
 					/>
@@ -52,7 +52,7 @@ const Register : FC = () => {
 						errorMessage={confirmPasswordMessage}
 						value={confirmPassword}
 						setValue={setConfirmPassword}
-						className="mb-2"
+						className="mb-1"
 						placeholder="Confirmar contraseña"
 						type={'password'}
 					/>
@@ -72,14 +72,14 @@ const Register : FC = () => {
 							setLoading(true)
 							setTimeout(()=>{
 								const valid = validateRegisterInputs({
-								username, 
-								email, 
-								password, 
-								confirmPassword, 
-								setUsernameMessage, 
-								setEmailMessage, 
-								setPasswordMessage, 
-								setConfirmPasswordMessage})
+									username, 
+									email, 
+									password, 
+									confirmPassword, 
+									setUsernameMessage, 
+									setEmailMessage, 
+									setPasswordMessage, 
+									setConfirmPasswordMessage})
 								setLoading(false)
 								if (valid) console.log("Sesion iniciada") ; else console.log("Fail")
 							}, 2000)

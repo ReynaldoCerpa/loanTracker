@@ -18,7 +18,7 @@
 
 	/* Styles for the register and login page main containers */
 	.reg-log-cont {
-		@apply bg-primary w-full h-screen flex flex-col items-center
+		@apply bg-primary w-full min-w-[250px] h-screen flex flex-col items-center
 	}
 
 }
@@ -35,7 +35,7 @@
 	}
 
 	.reg-log-cont {
-		@apply pt-16 px-5
+		@apply pt-10 px-5
 	}
 }
 
