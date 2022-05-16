@@ -6,7 +6,7 @@ module.exports = {
   theme: {
 		fontFamily: {
       "raleway":["Raleway","sans serif"],
-      "source":["Source+sans+Pro", "sans serif"],
+      "source":["Source sans Pro", "sans serif"],
       "montserrat":["Montserrat","sans serif"],
     },
 		extend: {
@@ -15,7 +15,15 @@ module.exports = {
 			},
 			screens: {
 				"sm": "430px",
-			}
+			},
+			gridTemplateColumns: {
+        'auto-fit': 'repeat(auto-fit, minmax(0, 1fr))',
+        'auto-fill': 'repeat(auto-fill, minmax(0, 1fr))',
+      },
+      gridTemplateRows: {
+        'auto-fit': 'repeat(auto-fit, minmax(0, 1fr))',
+        'auto-fill': 'repeat(auto-fill, minmax(0, 1fr))',
+      },
 		}
   },
   plugins: [],
