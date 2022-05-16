@@ -9,13 +9,12 @@ const AddLoan = () => {
 	return (
 		<>
 			<AddLoanButton 
-			onClick={()=>{
-				setOpened(!opened)
-			}}
+				onClick={()=>{
+					setOpened(!opened)
+				}}
 			/>
 			<AddLoanModal 
 				opened={opened}
-				setOpened={setOpened}
 				onClickCancelButton={()=>{
 					setOpened(false)
 				}}

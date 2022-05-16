@@ -17,7 +17,7 @@ export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) 
 		>
 			<h1>Modal para agregar prestamo</h1>
 			<Button
-				className="bg-primary"
+				className="base-button text-white bg-primary"
 				title="Cancelar"
 				onClick={onClickCancelButton}
 			/>
