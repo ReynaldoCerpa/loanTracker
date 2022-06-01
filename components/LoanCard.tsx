@@ -1,6 +1,7 @@
 import { UnstyledButton } from "@mantine/core"
+import { LoanCardProps } from "../types/loan"
 
-export const LoanCard = ({id, loan, opened, setOpened} : any) => {
+export const LoanCard = ({id, loan, setOpened} : LoanCardProps) => {
 	
 	function shrinkText( text : string ) : string {
 		const dots = " ..."

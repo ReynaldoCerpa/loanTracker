@@ -2,11 +2,9 @@ import { FC, useState } from "react";
 import AddLoan from "../components/AddLoan/AddLoan";
 import { LoanCard } from "../components/LoanCard";
 import { LoanInfoModal } from "../components/LoanInfoModal";
-import { Loan } from "../types/AddLoan";
 
 const Home : FC = () => {
 
-	
 	const [infoModalOpened, setInfoModalOpened] = useState(false)
 	const [selectedLoan, setSelectedLoan] = useState({
 		id: "",
@@ -19,7 +17,7 @@ const Home : FC = () => {
 	})
 	const loan = [{
 		id: "RCT1",
-		debtorName: "Reynaldo Cerpa Tinajero",
+		debtorName: "Reynaldo Cerpa Tinajero Reynaldo Cerpa Martinez Antonio",
 		debtorCellphone: "616-105-8671",
 		dueDate: "5-16-2022",
 		amount: "$560",

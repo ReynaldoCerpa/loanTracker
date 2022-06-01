@@ -1,5 +1,5 @@
 import { FiPlus } from "react-icons/fi";
-import { AddLoanButtonProps } from "../../types/AddLoan";
+import { AddLoanButtonProps } from "../../types/loan";
 
 export const AddLoanButton = ({onClick} : AddLoanButtonProps) => {
 

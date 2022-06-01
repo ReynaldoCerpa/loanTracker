@@ -16,3 +16,10 @@ export interface Loan {
 	payments: Array<string>,
 	loanDate: string
 } 
+
+export interface LoanCardProps {
+	id: string | number,
+	loan: Object<Loan>, 
+	opened: boolean,
+	setOpened: React.Dispatch<React.SetStateAction<any>>
+}
