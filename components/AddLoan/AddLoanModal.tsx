@@ -7,20 +7,31 @@ import "dayjs/locale/es-mx"
 
 export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) => {
 
-	const inputStyling = "my-1 max-w-[14rem] w-full"
+	const inputStyling = "my-2 max-w-[14rem] w-full"
 
-	const [input, setInput] = useState("")
 	const [nombre, setNombre] = useState("")
 	const [celular, setCelular] = useState("")
-	const [fechaPago, setFechaPago] = useState("")
+	const [fechaPago, setFechaPago] = useState<Date | null>(null)
 	const [totalPrestamo, setTotalPrestamo] = useState("")
 	const [abono, setAbono] = useState("")
 
+	function clearInputs() : void {
+		setNombre("")
+		setCelular("")
+		setFechaPago(null)
+		setTotalPrestamo("")
+		setAbono("")
+	}
+
 	useEffect(()=>{
-		if(opened === false){
-			setInput("")
+		if(opened){
+			setNombre("")
+			setCelular("")
+			setFechaPago(null)
+			setTotalPrestamo("")
+			setAbono("")
 		}
-	})
+	}, [])
 	
 	return (
 		<Modal
@@ -42,6 +53,7 @@ export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) 
 				/>
 				<Input
 					placeholder="Celular"
+					type="number"
 					value={celular}
 					className={inputStyling}
 					onChange={(e:any)=>setCelular(e.target.value)}
@@ -49,7 +61,14 @@ export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) 
 				<DatePicker
 				  placeholder="Fecha limite de pago"
 				  locale="es-mx"
+				  value={fechaPago}
 				  className={inputStyling}
+				  onChange={(e:any)=>{
+					if ( e.toString().indexOf("1969") == -1) {
+					  setFechaPago(new Date(e))
+					  console.log(fechaPago)
+					}
+				  }}
 				/>
 				<Input
 					placeholder="Cantidad a prestar"
@@ -76,7 +95,11 @@ export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) 
 					<Button
 						className="base-button text-white bg-primary mx-1"
 						title="Cancelar"
-						onClick={onClickCancelButton}
+						onClick={()=>{
+							onClickCancelButton()
+							clearInputs()
+						  }
+						}
 					/>
 				</div>
 			</div>

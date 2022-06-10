@@ -11,6 +11,10 @@
 		@apply font-raleway py-2 px-3 rounded-md;
 	}
 
+	.base-input {
+		@apply h-10 
+	}
+
 	/* Used for login and register page form cards */
 	.form-card {
 		@apply bg-white max-w-[50vh] w-full rounded-2xl drop-shadow-xl flex flex-col

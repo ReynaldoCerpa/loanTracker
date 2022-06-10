@@ -3,10 +3,11 @@ import { InputProps } from '../types/input';
 
 const Input = ({className, placeholder, type, errorMessage, value, setValue}: InputProps) => {
 
+	const newClassname = `base-input ${className}`
 	return (
 			<InputWrapper
 				error={errorMessage}
-				className={className}
+				className={newClassname}
 			>
 				<MantineInput
 					value={value}
