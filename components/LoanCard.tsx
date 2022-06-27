@@ -2,12 +2,35 @@ import { UnstyledButton } from "@mantine/core"
 import { LoanCardProps } from "../types/loan"
 
 export const LoanCard = ({id, loan, setOpened} : LoanCardProps) => {
-	
+
+	let labelAlertColor = colorAlert(loan.dueDate)
+	let labelColor = `${labelAlertColor} h-full w-[1rem] rounded-l-xl`
+
 	function shrinkText( text : string ) : string {
 		const dots = " ..."
 		let newText = (text.length > 47) ? text.slice(0, 47)+dots : text
 		return newText
 	}
+
+	function colorAlert(date: string) : string{
+	  const currentDate = new Date()
+	  const dueDate = new Date(date)
+	  console.log(dueDate.getMonth())
+	  console.log(currentDate.getMonth())
+	  let color = ""
+	  if(dueDate.getMonth() < currentDate.getMonth() || 
+		  (dueDate.getMonth() === currentDate.getMonth() && 
+		((dueDate.getDate() - currentDate.getDate()) < 11))){
+		  color = "bg-red-600"
+	  } else if (dueDate.getMonth() - currentDate.getMonth() <= 0) {
+		  color = "bg-yellow-400"
+	  } else {
+		color = "bg-gray-400"
+	  }
+
+	  return color
+	}
+
 
 	return (
 		<div className="min-w-[320px] max-w-[600px] w-full mx-auto">
@@ -18,7 +41,7 @@ export const LoanCard = ({id, loan, setOpened} : LoanCardProps) => {
 												drop-shadow-md
 												flex"
 			>
-					<div className="bg-gray-400 h-full w-[1rem] rounded-l-xl">
+					<div className={labelColor}>
 					</div>
 					<div className="bg-white h-full w-full rounded-r-xl p-3 grid grid-cols-4 ">
 						<p className="col-span-1 font-raleway flex justify-start">Nombre: </p>

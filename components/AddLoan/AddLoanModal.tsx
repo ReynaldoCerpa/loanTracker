@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { AddLoanModalProps } from "../../types/loan"
 import Button from "../Button"
 import { DatePicker } from "@mantine/dates"
+import { formatDate } from "../../utils/dateFormatter"
 import "dayjs/locale/es-mx"
 
 export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) => {
@@ -13,6 +14,7 @@ export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) 
 	const [celular, setCelular] = useState("")
 	const [fechaPago, setFechaPago] = useState<Date | null>(null)
 	const [totalPrestamo, setTotalPrestamo] = useState("")
+	const [cantidadBoletos, setCantidadBoletos] = useState("")
 	const [abono, setAbono] = useState("")
 
 	function clearInputs() : void {
@@ -20,6 +22,7 @@ export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) 
 		setCelular("")
 		setFechaPago(null)
 		setTotalPrestamo("")
+		setCantidadBoletos("")
 		setAbono("")
 	}
 
@@ -29,6 +32,7 @@ export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) 
 			setCelular("")
 			setFechaPago(null)
 			setTotalPrestamo("")
+			setCantidadBoletos("")
 			setAbono("")
 		}
 	}, [])
@@ -65,13 +69,21 @@ export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) 
 				  className={inputStyling}
 				  onChange={(e:any)=>{
 					if ( e.toString().indexOf("1969") == -1) {
-					  setFechaPago(new Date(e))
-					  console.log(fechaPago)
+					  const formattedDate = formatDate(e.toString())
+					  console.log(formattedDate)
+					  setFechaPago(new Date(formattedDate))
 					}
 				  }}
 				/>
 				<Input
-					placeholder="Cantidad a prestar"
+					placeholder="Cantidad de boletos"
+					type="number"
+					value={cantidadBoletos}
+					className={inputStyling}
+					onChange={(e:any)=>setCantidadBoletos(e.target.value)}
+				/>
+				<Input
+					placeholder="Precio por boleto"
 					type="number"
 					value={totalPrestamo}
 					className={inputStyling}
@@ -96,6 +108,7 @@ export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) 
 						className="base-button text-white bg-primary mx-1"
 						title="Cancelar"
 						onClick={()=>{
+							console.log(fechaPago)
 							onClickCancelButton()
 							clearInputs()
 						  }
