@@ -8,6 +8,7 @@ export const LoanCard = ({id, loan, setOpened} : LoanCardProps) => {
 		let newText = (text.length > 47) ? text.slice(0, 47)+dots : text
 		return newText
 	}
+	console.log(loan.dueDate)
 
 	return (
 		<div className="min-w-[320px] max-w-[600px] w-full mx-auto">
