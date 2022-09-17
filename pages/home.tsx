@@ -19,7 +19,7 @@ const Home : FC = () => {
 		id: "RCT1",
 		debtorName: "Reynaldo Cerpa Tinajero Reynaldo Cerpa Gomez Antonio",
 		debtorCellphone: "616-105-8671",
-		dueDate: "5-16-2022",
+		dueDate: "10-25-2022",
 		amount: "$560",
 		payments: "$200",
 		loanDate: "5-15-2022"
@@ -28,11 +28,21 @@ const Home : FC = () => {
 		id: "RCT2",
 		debtorName: "Pedro Perez",
 		debtorCellphone: "616-105-8671",
-		dueDate: "5-16-2022",
+		dueDate: "5-19-2022",
 		amount: "$560",
 		payments: "$200",
 		loanDate: "5-15-2022"
 	},
+	{
+		id: "RCT2",
+		debtorName: "Pedro Perez",
+		debtorCellphone: "616-105-8671",
+		dueDate: "7-01-2022",
+		amount: "$560",
+		payments: "$200",
+		loanDate: "5-15-2022"
+	},
+
 	]
 	return (
 		<div className="h-screen bg-gray-100">
