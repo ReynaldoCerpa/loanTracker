@@ -63,10 +63,10 @@ export const AddLoanModal = ({opened, onClickCancelButton} : AddLoanModalProps) 
 				  locale="es-mx"
 				  value={fechaPago}
 				  className={inputStyling}
+				  clearable={false}
 				  onChange={(e:any)=>{
-					if ( e.toString().indexOf("1969") == -1) {
+					if ( e && e.toString().indexOf("1969") == -1 ) {
 					  setFechaPago(new Date(e))
-					  console.log(fechaPago)
 					}
 				  }}
 				/>

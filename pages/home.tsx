@@ -17,7 +17,7 @@ const Home : FC = () => {
 	})
 	const loan = [{
 		id: "RCT1",
-		debtorName: "Reynaldo Cerpa Tinajero Reynaldo Cerpa Martinez Antonio",
+		debtorName: "Reynaldo Cerpa Tinajero Reynaldo Cerpa Gomez Antonio",
 		debtorCellphone: "616-105-8671",
 		dueDate: "5-16-2022",
 		amount: "$560",
